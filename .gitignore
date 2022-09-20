@@ -1,0 +1,12 @@
+*.jar
+.idea
+backups
+data/banned-ips.json
+data/banned-players.json
+data/libraries
+data/logs
+data/versions
+data/world
+data/eula.txt
+data/log4j2.xml
+data/usercache.json
