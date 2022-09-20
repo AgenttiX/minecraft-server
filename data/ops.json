@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "uuid": "1493ce73-777b-4127-972f-4f9ee00f51a6",
+    "name": "AgenttiX",
+    "level": 4,
+    "bypassesPlayerLimit": true
+  }
+]
