@@ -1,0 +1,49 @@
+version: "3.8"
+services:
+  minecraft:
+    container_name: minecraft
+    image: itzg/minecraft-server
+    environment:
+      - ENABLE_ROLLING_LOGS=true
+      - EULA=TRUE
+      - MEMORY=2G
+      - VERSION=1.19.2
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./data:/data
+      - /etc/timezone:/etc/timezone:ro
+    labels:
+      - "com.centurylinklabs.watchtower.scope=minecraft"
+    deploy:
+      restart_policy:
+        max_attempts: 3
+        window: 30s
+  minecraft-backup:
+    container_name: minecraft_backup
+    image: itzg/mc-backup
+    environment:
+      - BACKUP_INTERVAL=1d
+      - RCON_HOST=minecraft
+    volumes:
+      - ./data:/data:ro
+      - ./backups:/backups
+    deploy:
+      restart_policy:
+        max_attempts: 3
+        window: 30s
+  watchtower:
+    container_name: minecraft_watchtower
+    hostname: watchtower
+    image: containrrr/watchtower:latest
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    # Run once a week on Wednesday at 04:00
+    command: --cleanup --schedule "0 0 4 * * 3" --scope minecraft
+    labels:
+      - "com.centurylinklabs.watchtower.scope=minecraft"
+    deploy:
+      restart_policy:
+        max_attempts: 3
+        window: 30s
