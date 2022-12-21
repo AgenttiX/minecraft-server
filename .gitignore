@@ -1,8 +1,12 @@
+*.log
 *.jar
 .idea
 backups
 data/banned-ips.json
 data/banned-players.json
+data/ftb-installer
+data/jre
+data/kubejs
 data/libraries
 data/logs
 data/versions
