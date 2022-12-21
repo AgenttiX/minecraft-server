@@ -2,12 +2,15 @@ version: "3.8"
 services:
   minecraft:
     container_name: minecraft
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server:java8-multiarch
     environment:
       - ENABLE_ROLLING_LOGS=true
       - EULA=TRUE
-      - MEMORY=2G
-      - VERSION=1.19.2
+      - MEMORY=14G
+      # - VERSION=1.10.2
+      - TYPE=FTBA
+      - FTB_MODPACK_ID=28
+      - FTB_MODPACK_VERSION_ID=1.11.0
     ports:
       - "25565:25565"
     volumes:
@@ -15,10 +18,7 @@ services:
       - /etc/timezone:/etc/timezone:ro
     labels:
       - "com.centurylinklabs.watchtower.scope=minecraft"
-    deploy:
-      restart_policy:
-        max_attempts: 3
-        window: 30s
+    restart: always
   minecraft-backup:
     container_name: minecraft_backup
     image: itzg/mc-backup
@@ -43,7 +43,5 @@ services:
     command: --cleanup --schedule "0 0 4 * * 3" --scope minecraft
     labels:
       - "com.centurylinklabs.watchtower.scope=minecraft"
-    deploy:
-      restart_policy:
-        max_attempts: 3
-        window: 30s
+    restart: always
+
