@@ -2,15 +2,15 @@ version: "3.8"
 services:
   minecraft:
     container_name: minecraft
-    image: itzg/minecraft-server:java8-multiarch
+    image: itzg/minecraft-server:java17
     environment:
       - ENABLE_ROLLING_LOGS=true
       - EULA=TRUE
       - MEMORY=14G
       # - VERSION=1.10.2
       - TYPE=FTBA
-      - FTB_MODPACK_ID=28
-      - FTB_MODPACK_VERSION_ID=1.11.0
+      - FTB_MODPACK_ID=101
+      - FTB_MODPACK_VERSION_ID=2297
     ports:
       - "25565:25565"
     volumes:
@@ -28,10 +28,9 @@ services:
     volumes:
       - ./data:/data:ro
       - ./backups:/backups
-    deploy:
-      restart_policy:
-        max_attempts: 3
-        window: 30s
+    labels:
+       - "com.centurylinklabs.watchtower.scope=minecraft"
+    restart: always
   watchtower:
     container_name: minecraft_watchtower
     hostname: watchtower
