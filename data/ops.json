@@ -4,5 +4,11 @@
     "name": "AgenttiX",
     "level": 4,
     "bypassesPlayerLimit": true
+  },
+  {
+    "uuid": "ed9a8807-2e36-4d34-86b1-86234df125e9",
+    "name": "Hooxu",
+    "level": 4,
+    "bypassesPlayerLimit": false
   }
 ]
