@@ -1,16 +1,17 @@
-version: "3.8"
 services:
   minecraft:
     container_name: minecraft
     image: itzg/minecraft-server:java17
+    tty: true
+    stdin_open: true
     environment:
       - ENABLE_ROLLING_LOGS=true
       - EULA=TRUE
       - MEMORY=14G
-      # - VERSION=1.10.2
-      - TYPE=FTBA
-      - FTB_MODPACK_ID=101
-      - FTB_MODPACK_VERSION_ID=2297
+      - VERSION=1.20.4
+      # - TYPE=FTBA
+      # - FTB_MODPACK_ID=101
+      # - FTB_MODPACK_VERSION_ID=2297
     ports:
       - "25565:25565"
     volumes:
@@ -24,10 +25,11 @@ services:
     image: itzg/mc-backup
     environment:
       - BACKUP_INTERVAL=1d
+      - PRUNE_BACKUPS_DAYS=30
       - RCON_HOST=minecraft
     volumes:
       - ./data:/data:ro
-      - ./backups:/backups
+      - /mnt/minecraft-backup/automatic:/backups
     labels:
        - "com.centurylinklabs.watchtower.scope=minecraft"
     restart: always
