@@ -1,15 +1,7 @@
 [
   {
-    "uuid": "a167c79b-72c2-41c1-b791-6c970d8808d2",
-    "name": "edelySan"
-  },
-  {
     "uuid": "a17079ba-5107-467a-9111-66e6220cab53",
     "name": "Kilpekonna"
-  },
-  {
-    "uuid": "1493ce73-777b-4127-972f-4f9ee00f51a6",
-    "name": "AgenttiX"
   },
   {
     "uuid": "46f90e86-8f4b-44e9-95f2-c0a313f01efb",
@@ -20,6 +12,26 @@
     "name": "TML10"
   },
   {
+    "uuid": "75ab144d-0ee7-4e53-82bb-deb2a3ea59cf",
+    "name": "Laakeri"
+  },
+  {
+    "uuid": "6b70debd-edbd-4161-a34b-f19ca343f32b",
+    "name": "Quantumwave"
+  },
+  {
+    "uuid": "a8dc1b5f-5e10-4c43-961e-3f2708e622fa",
+    "name": "Hieroja"
+  },
+  {
+    "uuid": "a0e23f64-944a-4dd1-a5a6-e628e2592f66",
+    "name": "Annskui"
+  },
+  {
+    "uuid": "1493ce73-777b-4127-972f-4f9ee00f51a6",
+    "name": "AgenttiX"
+  },
+  {
     "uuid": "ed9a8807-2e36-4d34-86b1-86234df125e9",
     "name": "Hooxu"
   },
@@ -28,23 +40,11 @@
     "name": "hengubengu"
   },
   {
-    "uuid": "75ab144d-0ee7-4e53-82bb-deb2a3ea59cf",
-    "name": "Laakeri"
-  },
-  {
     "uuid": "f459c586-9429-4601-a9d0-5a0d0cb23439",
     "name": "Nidraz"
   },
   {
-    "uuid": "6b70debd-edbd-4161-a34b-f19ca343f32b",
-    "name": "Quantumwave"
-  },
-  {
     "uuid": "fe78ba86-b9db-40c7-a52b-82c86afbe101",
     "name": "Sibryc"
-  },
-  {
-    "uuid": "a8dc1b5f-5e10-4c43-961e-3f2708e622fa",
-    "name": "Hieroja"
   }
 ]
