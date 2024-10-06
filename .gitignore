@@ -3,6 +3,12 @@
 .idea
 backups
 data/.ftb-installed
+# The Paper version is managed by the Docker container
+data/.paper.env
+data/.papermc-manifest.json
+# These files contain the rcon password
+data/.rcon-cli.env
+data/.rcon-cli.yaml
 data/banned-ips.json
 data/banned-players.json
 data/config
@@ -18,6 +24,7 @@ data/rhino.local.properties
 data/user_jvm_args.txt
 data/versions
 data/world
+data/world_*
 data/eula.txt
 data/log4j2.xml
 data/run.bat
@@ -25,4 +32,5 @@ data/run.sh
 data/usercache.json
 data/usernamecache.json
 data/version.json
+data/version_history.json
 
